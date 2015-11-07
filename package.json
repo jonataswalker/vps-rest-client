@@ -1,0 +1,27 @@
+{
+  "name": "vps-rest-client",
+  "version": "0.1.0",
+  "description": "A Node.js REST client for VPS admin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-libcurl": "~0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonataswalker/vps-rest-client.git"
+  },
+  "keywords": [
+    "REST",
+    "curl",
+    "VPS"
+  ],
+  "author": "Jonatas Walker <jonataswalker@gmail.com> (https://github.com/jonataswalker)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonataswalker/vps-rest-client/issues"
+  },
+  "homepage": "https://github.com/jonataswalker/vps-rest-client#readme"
+}
