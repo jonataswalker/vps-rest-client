@@ -1,2 +1,2 @@
-# budgetvm-rest-client
-A Node.js REST client for BudgetVM
+# vps-rest-client
+A Node.js REST client for VPS admin.
