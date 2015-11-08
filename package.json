@@ -1,6 +1,6 @@
 {
   "name": "vps-rest-client",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A Node.js REST client for VPS admin",
   "main": "index.js",
   "scripts": {
