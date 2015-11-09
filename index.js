@@ -5,11 +5,21 @@ var utils = require('./utils');
 var Curl = require('node-libcurl').Curl;
 var querystring = require('querystring');
 
-// Export createClient method
+/**
+ * Export createClient method.
+ * @param {String} key API required key.
+ * @param {Object|undefined} options Options.
+ */
 module.exports.createClient = function(key, options) {
   return new Client(key, options);
 };
 
+/**
+ * Wrapper class around node-libcurl.
+ * @extends Curl
+ * @param {String} key API required key.
+ * @param {Object|undefined} opt_options Options.
+ */
 function Client(key, opt_options) {
   Curl.apply(this);
   
@@ -30,6 +40,12 @@ function Client(key, opt_options) {
 }
 util.inherits(Client, Curl);
 
+/**
+ * Makes a GET request and returns a promise.
+ * This promise will be resolved when the API response is available.
+ * @param {String} url API url.
+ * @return {Promise.prototype.then(onFulfilled, onRejected)}
+ */
 Client.prototype.get = Client.prototype.GET = function(url) {
   var self = this;
   
@@ -53,6 +69,13 @@ Client.prototype.get = Client.prototype.GET = function(url) {
   });
 };
 
+/**
+ * Makes a POST request and returns a promise.
+ * This promise will be resolved when the API response is available.
+ * @param {String} url API url.
+ * @param {Object} data Data to be posted.
+ * @return {Promise.prototype.then(onFulfilled, onRejected)}
+ */
 Client.prototype.post = Client.prototype.POST = function(url, data) {
   var self = this;
   
@@ -76,6 +99,13 @@ Client.prototype.post = Client.prototype.POST = function(url, data) {
   });
 };
 
+/**
+ * Makes a PUT request and returns a promise.
+ * This promise will be resolved when the API response is available.
+ * @param {String} url API url.
+ * @param {Object} data Data to be posted.
+ * @return {Promise.prototype.then(onFulfilled, onRejected)}
+ */
 Client.prototype.put = Client.prototype.PUT = function(url, data) {
   var self = this;
   
@@ -99,6 +129,13 @@ Client.prototype.put = Client.prototype.PUT = function(url, data) {
   });
 };
 
+/**
+ * Makes a DELETE request and returns a promise.
+ * This promise will be resolved when the API response is available.
+ * @param {String} url API url.
+ * @param {Object} data Data to be posted.
+ * @return {Promise.prototype.then(onFulfilled, onRejected)}
+ */
 Client.prototype.delete = Client.prototype.DELETE = function(url, data) {
   var self = this;
   
