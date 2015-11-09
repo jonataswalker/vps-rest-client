@@ -3,7 +3,7 @@ A Node.js REST client for VPS admin.
 This is a wrapper around [node-libcurl](https://github.com/JCMais/node-libcurl) focusing on consuming VPS REST API.
 
 ### Install
-```npm install vps-rest-client```
+```[sudo] npm install [-g] vps-rest-client```
 
 ### Simple GET
 ```javascript
