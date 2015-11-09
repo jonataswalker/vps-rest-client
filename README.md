@@ -54,9 +54,19 @@ client.post(host, post).then(function(resp) {
 ```
 
 ## Friendly response
-All methods convert the reply from REST API into a JavaScript Object.
+All methods convert the reply from REST API into a **JavaScript Object**.
 That way you can interact with the responses using JavaScript syntax.
 
+# API
+
+## Constructor
+
+#### `createClient(key, options)`
+
+###### `key` API required key
+
+###### `options` is an object with the following possible properties:
+* `verbose`: *true*;
 
 ## Methods
 The commands can be specified in uppercase or lowercase for convenience. `client.get()` is the same as `client.GET()`.
