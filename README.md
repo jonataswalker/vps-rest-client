@@ -19,9 +19,7 @@ var client = rest.createClient(key, {
 client.get(host + '/' + domain_id).then(function(response) {
   console.info(response);
   client.close();
-}, function(error) {
-  console.info(error);
-});
+}).catch((err) => console.info(err));
 
 ```
 
@@ -41,15 +39,11 @@ client.post(host, post).then(function(resp) {
     client.get(host + '/' + domain_id).then(function(response) {
       console.info(response);
       client.close();
-    }, function(error) {
-      console.info(error);
     });
   } else {
     client.close();
   }
-}, function(error) {
-  console.info(error);
-});
+}).catch((err) => console.info(err));
 
 ```
 
