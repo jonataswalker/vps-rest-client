@@ -1,13 +1,13 @@
 {
   "name": "vps-rest-client",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A Node.js REST client for VPS admin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "node-libcurl": "~0.7"
+    "node-libcurl": "~0.8"
   },
   "repository": {
     "type": "git",
