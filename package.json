@@ -3,12 +3,6 @@
   "version": "0.1.5",
   "description": "A Node.js REST client for VPS admin",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "node-libcurl": "~1.1.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jonataswalker/vps-rest-client.git"
@@ -20,10 +14,22 @@
     "curl",
     "VPS"
   ],
-  "author": "Jonatas Walker <jonataswalker@gmail.com> (https://github.com/jonataswalker)",
+  "author": "Jonatas Walker <jonataswalker@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jonataswalker/vps-rest-client/issues"
   },
-  "homepage": "https://github.com/jonataswalker/vps-rest-client#readme"
+  "homepage": "https://github.com/jonataswalker/vps-rest-client#readme",
+  "scripts": {
+    "lint": "eslint . --cache",
+    "test": "ava --verbose"
+  },
+  "dependencies": {
+    "node-libcurl": "^1.3.0"
+  },
+  "devDependencies": {
+    "ava": "^1.0.0-beta.3",
+    "eslint": "^4.19.1",
+    "eslint-config-jwalker": "^5.1.0"
+  }
 }
