@@ -1,29 +1,19 @@
-var host = 'https://api.budgetvm.com/v2/dns/record';
-var key = '...';
-var domain_id = '...';
+const Client = require('../');
 
-var rest = require('vps-rest-client');
-var client = rest.createClient(key, {
-  verbose: false
-});
+var host = 'https://api.linode.com/v4/domains';
+var token = '....';
+var domain = 'foo-domain.com';
+var post = { domain: 'mynewdomain2.com' };
+var change = { soa_email: 'newemail@example.com' };
 
-var post = {
-  domain: domain_id,
-  record: 'test.example.net',
-  type: 'A',
-  content: '111.111.111.111'
-};
+const client = new Client(token);
 
-// POST a new record and when done ... list all records
-client.POST(host, post).then(function(resp) {
-  console.info(resp);
-  
-  if (resp.success === true) {
-    client.get(host + '/' + domain_id).then(function(response) {
-      console.info(response);
-      client.close();
-    });
-  } else {
-    client.close();
-  }
-}).catch((err) => console.info(err));
+client.GET(host)
+  .then(res => res.data.find(o => o.domain === domain).id)
+  .then(id => client.POST(`${host}/${id}/clone`, post))
+  .then(res => res.id)
+  .then(id => client.PUT(`${host}/${id}`, change))
+  .then(res => res.id)
+  .then(id => client.DELETE(`${host}/${id}`))
+  .then(console.log)
+  .catch(console.log);
